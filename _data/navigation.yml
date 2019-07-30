@@ -1,8 +1,7 @@
 - name: Home
   link: /
-- name: About
-  link: /about.html
+  description: The home page
+
 - name: Blog
   link: /blog.html
-- name: Staff
-  link: /staff.html
+  description: A list of all blog posts
