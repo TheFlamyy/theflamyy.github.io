@@ -1,0 +1,52 @@
+$property: all;
+$easing: ease-in-out;
+$rest: translateY(0px);
+
+$fade-time: 0.3s;
+
+$slide: translateY(10px);
+$slide-time: 0.5s;
+
+.animated {
+    transition: $property 0 $easing 0s;
+    -moz-transition: $property 0 $easing 0s;
+    -ms-transition: $property 0 $easing 0s;
+    -o-transition: $property 0 $easing 0s;
+    -webkit-transition: $property 0 $easing 0s;
+}
+
+.finished {
+    opacity: 1 !important;
+
+    -webkit-transform: $rest !important;
+    -moz-transform: $rest !important;
+    -o-transform: $rest !important;
+    -ms-transform: $rest !important;
+    transform: $rest !important;
+}
+
+.fade-in {
+    opacity: 0;
+
+    transition-duration: $fade-time;
+    -moz-duration: $fade-time;
+    -ms-duration: $fade-time;
+    -o-duration: $fade-time;
+    -webkit-duration: $fade-time;
+}
+
+.slide-in {
+    opacity: 0;
+
+    -webkit-transform: $slide;
+    -moz-transform: $slide;
+    -o-transform: $slide;
+    -ms-transform: $slide;
+    transform: $slide;
+
+    transition-duration: $slide-time;
+    -moz-duration: $slide-time;
+    -ms-duration: $slide-time;
+    -o-duration: $slide-time;
+    -webkit-duration: $slide-time;
+}
