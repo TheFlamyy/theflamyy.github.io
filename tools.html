@@ -1,0 +1,22 @@
+---
+title: Flamy's Tools
+description: On this page all of my projects can be found
+---
+
+{%- for t in site.tools -%}
+    {%- assign mod = forloop.index0 | modulo: 2 -%}
+    {%- if mod == 1 -%}
+        {%- continue -%}
+    {%- endif -%}
+
+
+    <div class="row pb-5 mx-auto">
+        {% assign tool = site.tools[forloop.index0] -%}
+        {% include showcase.html item=tool %}
+        <div class="col-md-1 pb-5"></div>
+        {%- assign tool = site.tools[forloop.index] -%}
+        {% include showcase.html item=tool %}
+    </div>
+
+
+{%- endfor -%}

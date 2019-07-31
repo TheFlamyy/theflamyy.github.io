@@ -1,0 +1,34 @@
+<!--
+<div class="col">
+    <div class="bg-primary tool-display" style="background-image: url('{{include.item.image}}')">
+        <span clas="tool-text align-bottom">{{include.item.name}}</span>
+    </div>
+</div>
+--->
+
+<div class="col">
+    {%- if include.item -%}
+    <div class="card shadow">
+        <div class="card-body">
+            <h4 class="card-title">{{include.item.name}}</h4>
+        </div>
+
+        <a href="{{include.item.url}}">
+            <img style="height: 200px; width: 100%; display: block; object-fit: cover;" src="{{include.item.image}}" alt="Card image">
+        </a>
+        
+        <div class="card-body">
+            <p class="card-text">
+                {{include.item.excerpt}}
+            </p>
+            <a href="{{include.item.url}}" class="card-link float-left">Read more...</a>
+            <a href="{{include.item.link}}" class="card-link float-right">
+            {%- if include.item.link_name -%}
+                {{include.item.link_name}}
+            {%- else -%}
+                Repository
+            {%- endif -%}</a>
+        </div>
+    </div>
+    {%- endif -%}
+</div>

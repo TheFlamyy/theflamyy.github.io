@@ -1,4 +1,13 @@
+collections:
+  tools:
+    output: true
+
 defaults:
+  - scope:
+      path: ""
+      type: "tools"
+    values:
+      layout: "tool"
   - scope:
       path: ""
       type: "posts"
@@ -17,3 +26,5 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+host: 0.0.0.0

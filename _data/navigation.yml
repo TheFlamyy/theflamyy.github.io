@@ -1,7 +1,8 @@
 - name: Home
   link: /
-  description: The home page
 
-- name: Blog
-  link: /blog.html
-  description: A list of all blog posts
+#- name: Blog
+#  link: /blog.html
+
+- name: Tools
+  link: /tools.html

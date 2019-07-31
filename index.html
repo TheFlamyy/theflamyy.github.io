@@ -1,3 +1,18 @@
 ---
-title: Home
+title: Home Page
+description: “I'm playing with fire, with something I don't understand.”<br>_-L.J. Smith_
+cover: /assets/images/banner.png
 ---
+
+<div class="jumbotron text-center">
+    {%- capture text -%}
+# Under construction
+
+This website is meant as a personal home page including a list of all projects.
+
+Furthermore, this side will be used as a type of portfolio.
+
+The final aim of this page is to learn about bootstrap, jekyll, git and most things I stumble upon.
+    {%- endcapture -%}
+    {{text | markdownify}}
+</div>
