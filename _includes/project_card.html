@@ -5,12 +5,11 @@
     </div>
 </div>
 --->
-
 <div class="col">
-    {%- if include.item -%}
-    <div class="card shadow">
+    {% if include.item %}
+    <div class="card shadow animated slide-up {% if include.css %}{{include.css}}{% endif %}">
         <div class="card-body">
-            <h4 class="card-title">{{include.item.name}}</h4>
+            <h4 class="card-title">{{include.item.title}}</h4>
         </div>
 
         <a href="{{include.item.url}}">
@@ -19,16 +18,14 @@
         
         <div class="card-body">
             <p class="card-text">
-                {{include.item.excerpt}}
+                {{include.item.excerpt | strip_html | truncate: 500, '...'}}
             </p>
             <a href="{{include.item.url}}" class="card-link float-left">Read more...</a>
-            <a href="{{include.item.link}}" class="card-link float-right">
-            {%- if include.item.link_name -%}
-                {{include.item.link_name}}
-            {%- else -%}
-                Repository
-            {%- endif -%}</a>
+            {% if include.item.website %}
+            <a href="{{include.item.website.link}}" class="card-link float-right">{{include.item.website.name}}</a>    
+            {% endif %}
+            
         </div>
     </div>
-    {%- endif -%}
+    {% endif %}
 </div>

@@ -1,13 +1,15 @@
 collections:
-  tools:
+  projects:
     output: true
+
+
 
 defaults:
   - scope:
       path: ""
-      type: "tools"
+      type: "projects"
     values:
-      layout: "tool"
+      layout: "project"
   - scope:
       path: ""
       type: "posts"

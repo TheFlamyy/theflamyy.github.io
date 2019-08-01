@@ -1,52 +1,59 @@
 $property: all;
 $easing: ease-in-out;
-$rest: translateY(0px);
+$default-transform: translate(0);
 
-$fade-time: 0.3s;
+$delay: 0.1s;
 
-$slide: translateY(10px);
-$slide-time: 0.5s;
+$fade-duration: 0.3s;
+$fast-fade-duration: 0.2s;
+
+$slide-transform: translateY(10px);
+$slide-duration: 0.3s;
+
+$prefixes: "", "-moz-", "-ms-", "-o-", "-webkit-";
+$transition-prefixes: "transition-", "-moz-", "-ms-", "-o-", "-webkit-";
+
 
 .animated {
-    transition: $property 0 $easing 0s;
-    -moz-transition: $property 0 $easing 0s;
-    -ms-transition: $property 0 $easing 0s;
-    -o-transition: $property 0 $easing 0s;
-    -webkit-transition: $property 0 $easing 0s;
+    opacity: 0;
+    
+    @each $prefix in $prefixes{
+        #{$prefix}transition: $property 0 $easing 0s;
+    }
 }
 
 .finished {
     opacity: 1 !important;
 
-    -webkit-transform: $rest !important;
-    -moz-transform: $rest !important;
-    -o-transform: $rest !important;
-    -ms-transform: $rest !important;
-    transform: $rest !important;
+    @each $prefix in $prefixes{
+        #{$prefix}transform: $default-transform !important;
+    }
 }
 
-.fade-in {
-    opacity: 0;
-
-    transition-duration: $fade-time;
-    -moz-duration: $fade-time;
-    -ms-duration: $fade-time;
-    -o-duration: $fade-time;
-    -webkit-duration: $fade-time;
+.fade {
+    @each $prefix in $transition-prefixes{
+        #{$prefix}duration: $fade-duration;
+    }
 }
 
-.slide-in {
-    opacity: 0;
+.fast-fade {
+    @each $prefix in $transition-prefixes{
+        #{$prefix}duration: $fast-fade-duration;
+    }
+}
 
-    -webkit-transform: $slide;
-    -moz-transform: $slide;
-    -o-transform: $slide;
-    -ms-transform: $slide;
-    transform: $slide;
+.slide-up {
+    @each $prefix in $prefixes{
+        #{$prefix}transform: $slide-transform;
+    }
 
-    transition-duration: $slide-time;
-    -moz-duration: $slide-time;
-    -ms-duration: $slide-time;
-    -o-duration: $slide-time;
-    -webkit-duration: $slide-time;
+    @each $prefix in $transition-prefixes{
+        #{$prefix}duration: $slide-duration;
+    }
+}
+
+.delayed {
+    @each $prefix in $transition-prefixes{
+        #{$prefix}delay: $delay;
+    }
 }

@@ -9,15 +9,18 @@
 
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
-      {%- for item in site.data.navigation -%}
-        {%- assign active = false -%}
-        {%- if page.url == item.link -%}
-          {%- assign active = true -%}
-        {%- endif -%}
-        <li class="nav-item {%- if active == true %} active {%- endif -%}">
-          <a class="nav-link" href="{{item.link}}">{{item.name}}{%- if active == true -%} <span class="sr-only">(current)</span> {%- endif -%}</a>
-        </li>
-      {%- endfor -%}
+      {% for item in site.data.navigation %}
+        {% assign active = false %}
+        {% if page.url == item.link %}
+          {% assign active = true %}
+        {% endif %}
+
+        <li class="nav-item {% if active == true %} active {% endif %}">
+          <a class="nav-link" href="{{item.link}}">{{item.name}}{% if active == true %} <span class="sr-only">(current)</span> {% endif %}</a>
+
+      {% endfor %}
+
+
     </ul>
   </div>
 </nav>
