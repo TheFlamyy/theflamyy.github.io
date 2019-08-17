@@ -1,30 +1,20 @@
-<!--
 <div class="col">
-    <div class="bg-primary tool-display" style="background-image: url('{{include.item.image}}')">
-        <span clas="tool-text align-bottom">{{include.item.name}}</span>
-    </div>
-</div>
---->
-<div class="col">
-    {% if include.item %}
-    <div class="card shadow animated slide-up {% if include.css %}{{include.css}}{% endif %}">
+    {%- if include.item -%}
+    <div class="card shadow animated slide-up {% if include.css %}{{include.css}}{%- endif -%}">
         <div class="card-body">
             <h4 class="card-title">{{include.item.title}}</h4>
         </div>
-
         <a href="{{include.item.url}}">
-            <img style="height: 200px; width: 100%; display: block; object-fit: cover;" src="{{include.item.image}}" alt="Card image">
+            <img style="height: 200px; width: 100%; display: block; object-fit: cover;" src="{{include.item.image}}" alt="Missing Image">
         </a>
-        
         <div class="card-body">
             <p class="card-text">
-                {{include.item.excerpt | strip_html | truncate: 500, '...'}}
+                {{include.item.excerpt | strip_html | truncate: 500, '...' | rstrip}}
             </p>
             <a href="{{include.item.url}}" class="card-link float-left">Read more...</a>
-            {% if include.item.website %}
+            {%- if include.item.website -%}
             <a href="{{include.item.website.link}}" class="card-link float-right">{{include.item.website.name}}</a>    
-            {% endif %}
-            
+            {%- endif -%}
         </div>
     </div>
     {% endif %}

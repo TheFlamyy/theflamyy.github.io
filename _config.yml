@@ -16,9 +16,13 @@ defaults:
     values:
       layout: "post"
   - scope:
-      path: ""
+      path: "index.html"
     values:
       layout: "default"
+  - scope:
+      path: ""
+    values:
+      layout: "contained"
 
 exclude:
   - vscodium.code-workspace

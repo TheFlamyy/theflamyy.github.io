@@ -3,18 +3,24 @@ title: Home
 description: “I'm playing with fire, with something I don't understand.”<br>_-L.J. Smith_
 cover: /assets/images/banner.png
 ---
+<div class="animated" style="background-color:rgb(146, 132, 67); margin-bottom: 30px;">
+    <div class="banner" style="background-image:url('/assets/images/banner.png');">
 
-<div class="jumbotron text-center animated fade">
-    {% capture text %}
-# Under construction
-
-This website is meant as a personal home page including a list of all projects.
-
-Furthermore, this side will be used as a type of portfolio.
-
-The final aim of this page is to learn about bootstrap, jekyll, git and most things I stumble upon.
-    {% endcapture %}
-    {{text | markdownify}}
+    </div>
 </div>
 
-{%- comment -%}<span class="dotted" data-toggle="tooltip" title="/fleɪˈmɪ/">Flamy</span>{%- endcomment -%}
+<div class="container">
+    <div>
+{%- capture welcome -%}
+## Welcome
+
+Hey, I'm <span class="dotted" data-toggle="tooltip" title="/fleɪˈmɪ/">Flamy</span>, and I'm an aspiring developer - but totally not a web developer.
+I'm really fond of the [Godot Game Engine](https://godotengine.org).
+
+To be quite honest, I am not sure what the purpose of this website is going to be. Regardless of that I will try to keep it up-to-date with my projects.
+Talking about projects, head over to the [projects page](projects) to get an overview of my humble selection of projects.
+{%- endcapture -%}{{ welcome | markdownify}}
+    </div>
+</div>
+
+{%- comment -%}{%- endcomment -%}

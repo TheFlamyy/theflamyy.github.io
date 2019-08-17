@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: contained
 ---
 <div class="jumbotron project-cover shadow" style="background-image: url('{{page.image}}')"></div>
 <span class="h1">{{page.title}}</span>
-{% if page.website %}
+{%- if page.website -%}
     <p><a href="{{page.website.link}}">{{page.website.name}}</a></p>
-{% endif %}
+{%- endif -%}
 {{ content }}

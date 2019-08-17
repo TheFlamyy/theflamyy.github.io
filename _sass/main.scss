@@ -2,6 +2,14 @@ body {
   padding-top: 50px !important;
 }
 
+.banner {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+ // z-index: -1;
+  opacity: 0.8;
+}
+
 .dotted {
   border-bottom: 1px dotted black;
 }
